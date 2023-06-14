@@ -11,21 +11,12 @@ namespace Player.Movement
         [SerializeField] private float _runSpeed = 4.0f;
         [SerializeField] private float _lookSpeed = 2.0f;
         [SerializeField] private float _lookXLimit = 60.0f;
-        [SerializeField] private float _gravity = 150.0f;
         [SerializeField] private PlayerInput _playerInput;
+        [SerializeField ]private CharacterController _characterController;
 
-        private CharacterController _characterController;
         private Vector3 _moveDirection = Vector3.zero;
         private float _rotationX = 0;
         private bool _canMove = true;
-
-        private void Start()
-        {
-            _characterController = GetComponent<CharacterController>();
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
 
         private void Update()
         {
@@ -34,11 +25,6 @@ namespace Player.Movement
             float curSpeedX = _canMove ? (_playerInput.IsRunning ? _runSpeed : _walkSpeed) * _playerInput.InputAxisY : 0;
             float curSpeedY = _canMove ? (_playerInput.IsRunning ? _runSpeed : _walkSpeed) * _playerInput.InputAxisX : 0;
             _moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-
-            if (!_characterController.isGrounded)
-            {
-                _moveDirection.y -= _gravity * Time.deltaTime;
-            }
 
             _characterController.Move(_moveDirection * Time.deltaTime);
 

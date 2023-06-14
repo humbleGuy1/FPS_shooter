@@ -15,20 +15,12 @@ namespace Player.Animation
         private readonly int FireHash = Animator.StringToHash(Fire);
         private readonly int SpeedHash = Animator.StringToHash(Speed);
 
-        private void Update()
-        {
-            if (_playerInput.IsShooting)
-            {
-                PlayAnimation(FireHash);
-            }
-
+        private void Update() => 
             _animator.SetFloat(SpeedHash, _characterController.velocity.magnitude);
-        }
 
-        private void PlayAnimation(int hash)
-        {
-            _animator.Play(hash);
-        }
+        public void PlayFireAnimation() => PlayAnimation(FireHash);
+
+        private void PlayAnimation(int hash) => _animator.Play(hash);
     }
 }
 
