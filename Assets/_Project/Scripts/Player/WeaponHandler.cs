@@ -15,8 +15,7 @@ namespace PlayerLogic.WeaponSystem
 
         private void Start()
         {
-            _currentWeapon = GetComponentInChildren<IWeapon>();
-            WeaponUsed?.Invoke();
+            SetUpWeapon();
         }
 
         public void UseWeapon()
@@ -37,6 +36,13 @@ namespace PlayerLogic.WeaponSystem
                 _playerAnimator.PlayReloadAnimation();
                 WeaponUsed?.Invoke();
             }
+        }
+
+        private void SetUpWeapon()
+        {
+            _currentWeapon = GetComponentInChildren<IWeapon>();
+            _currentWeapon.Initialize();
+            WeaponUsed?.Invoke();
         }
     }
 }

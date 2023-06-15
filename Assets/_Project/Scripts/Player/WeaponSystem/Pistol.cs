@@ -5,13 +5,15 @@ namespace PlayerLogic.WeaponSystem
 {
     public class Pistol : Weapon
     {
-        [SerializeField] private WeaponSO _pistolSritableObject;
         [SerializeField] private Transform _shootingPoint;
         [SerializeField] private GameObject _shotEffect;
 
-        private void Start()
+        public override void Initialize()
         {
-            Initialize();
+            maxCapacity = weaponSriptableObject.MaxCapacity;
+            fireCooldown = weaponSriptableObject.FireCooldown;
+            reloadingTime = weaponSriptableObject.ReloadingTime;
+            currentAmmo = maxCapacity;
         }
 
         public override void Shoot()
@@ -25,14 +27,6 @@ namespace PlayerLogic.WeaponSystem
 
             if(currentAmmo == 0)
                 isEmpty = true;
-        }
-
-        private void Initialize()
-        {
-            maxCapacity = _pistolSritableObject.MaxCapacity;
-            fireCooldown = _pistolSritableObject.FireCooldown;
-            reloadingTime = _pistolSritableObject.ReloadingTime;
-            currentAmmo = maxCapacity;
         }
 
         private IEnumerator ActivateEffect()

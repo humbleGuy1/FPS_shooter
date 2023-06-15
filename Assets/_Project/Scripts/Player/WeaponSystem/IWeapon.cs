@@ -8,6 +8,7 @@
         public float ReloadingTime { get; }
         public bool IsEmpty { get; }
 
+        public void Initialize();
         public void Shoot();
         public void Reload();
     }

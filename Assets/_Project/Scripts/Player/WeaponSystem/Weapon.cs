@@ -4,6 +4,8 @@ namespace PlayerLogic.WeaponSystem
 {
     public abstract class Weapon : MonoBehaviour, IWeapon
     {
+        [SerializeField] protected WeaponSO weaponSriptableObject;
+
         protected int maxCapacity;
         protected int currentAmmo;
         protected float fireCooldown;
@@ -17,6 +19,7 @@ namespace PlayerLogic.WeaponSystem
         public bool IsEmpty => isEmpty;
 
         public abstract void Shoot();
+        public abstract void Initialize();
 
         public void Reload()
         {

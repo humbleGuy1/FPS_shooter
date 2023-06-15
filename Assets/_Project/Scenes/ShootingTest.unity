@@ -984,6 +984,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.05382955
       objectReference: {fileID: 0}
+    - target: {fileID: 1415410106554878179, guid: 16fa69ff15a0d1b4b971d45286955d6f, type: 3}
+      propertyPath: weaponSriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 5beee64080ba72a478d617ecebb0b70c, type: 2}
+    - target: {fileID: 1415410106554878179, guid: 16fa69ff15a0d1b4b971d45286955d6f, type: 3}
+      propertyPath: _weaponSriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 5beee64080ba72a478d617ecebb0b70c, type: 2}
     - target: {fileID: 1916575388415473767, guid: 16fa69ff15a0d1b4b971d45286955d6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 2.6772554
