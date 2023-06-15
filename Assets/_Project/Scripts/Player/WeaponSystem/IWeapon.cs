@@ -4,8 +4,9 @@
     {
         public int MaxAmmo { get; }
         public int CurrentAmmo { get; }
+        public float FireCooldown { get; }
 
-        public void Attack();
+        public void Shoot();
         public void Reload();
     }
 }

@@ -19,16 +19,17 @@ namespace PlayerLogic.WeaponSystem
             WeaponUsed?.Invoke();
         }
 
-        public void TryUseWeapon()
+        public void UseWeapon()
         {
             if (_currentWeapon.CurrentAmmo > 0)
             {
-                _currentWeapon.Attack();
+                _currentWeapon.Shoot();
                 _playerAnimator.PlayFireAnimation();
             }
-            else
+            else if (_currentWeapon.CurrentAmmo < _currentWeapon.MaxAmmo)
             {
                 _currentWeapon.Reload();
+                _playerAnimator.PlayReloadAnimation();
             }
 
             WeaponUsed?.Invoke();

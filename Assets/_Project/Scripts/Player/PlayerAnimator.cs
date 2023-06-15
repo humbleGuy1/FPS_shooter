@@ -11,14 +11,18 @@ namespace PlayerLogic.Animation
 
         private const string Fire = "Fire";
         private const string Speed = "Speed";
+        private const string Reload = "Reload";
 
         private readonly int FireHash = Animator.StringToHash(Fire);
         private readonly int SpeedHash = Animator.StringToHash(Speed);
+        private readonly int ReloadHash = Animator.StringToHash(Reload);
 
         private void Update() => 
             _animator.SetFloat(SpeedHash, _characterController.velocity.magnitude);
 
         public void PlayFireAnimation() => PlayAnimation(FireHash);
+
+        public void PlayReloadAnimation() => PlayAnimation(ReloadHash);
 
         private void PlayAnimation(int hash) => _animator.Play(hash);
     }

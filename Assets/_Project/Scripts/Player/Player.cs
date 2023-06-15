@@ -12,10 +12,8 @@ namespace PlayerLogic
 
         private void Update()
         {
-            if (_playerInput.IsShooting)
-            {
-                _weaponHadnler.TryUseWeapon();
-            }
+            if (_playerInput.IsShooting || _playerInput.IsReloading)
+                _weaponHadnler.UseWeapon();
         }
     }
 }

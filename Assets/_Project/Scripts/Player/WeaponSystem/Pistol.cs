@@ -3,44 +3,32 @@ using UnityEngine;
 
 namespace PlayerLogic.WeaponSystem
 {
-    public class Pistol : MonoBehaviour, IWeapon
+    public class Pistol : Weapon
     {
         [SerializeField] private WeaponSO _weaponSritableObject;
         [SerializeField] private Transform _shootingPoint;
         [SerializeField] private GameObject _shotEffect;
-
-        private int _maxAmmo;
-        private int _currentAmmo;
-
-        public int MaxAmmo => _maxAmmo;
-        public int CurrentAmmo => _currentAmmo;
 
         private void Start()
         {
             Initialize();
         }
 
-        public void Attack()
+        public override void Shoot()
         {
             Ray ray = new Ray(_shootingPoint.position, transform.forward);
 
             Debug.DrawLine(ray.origin, ray.origin + ray.direction * 10f, Color.red);
 
             StartCoroutine(ActivateEffect());
-            _currentAmmo--;
-
-        }
-
-        public void Reload()
-        {
-            print("Reloaded");
-            _currentAmmo = _maxAmmo;
+            currentAmmo--;
         }
 
         private void Initialize()
         {
-            _maxAmmo = _weaponSritableObject.MaxAmmo;
-            _currentAmmo = _maxAmmo;
+            maxAmmo = _weaponSritableObject.MaxAmmo;
+            currentAmmo = maxAmmo;
+            fireCooldown = _weaponSritableObject.FireCooldown;
         }
 
         private IEnumerator ActivateEffect()

@@ -15,6 +15,7 @@ namespace PlayerLogic.InputService
         public float InputMouseX => Input.GetAxis(MouseX);
         public bool IsRunning => Input.GetKey(KeyCode.LeftShift);
         public bool IsShooting => Input.GetKeyDown(KeyCode.Mouse0);
+        public bool IsReloading => Input.GetKeyDown(KeyCode.R);
     }
 }
 
