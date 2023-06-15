@@ -22,22 +22,22 @@ namespace PlayerLogic.WeaponSystem
 
         public void UseWeapon()
         {
-            if (_currentWeapon.IsEmpty == false)
-            {
-                _currentWeapon.Shoot();
-                _playerAnimator.PlayFireAnimation();
-                WeaponUsed?.Invoke();
-            }
+            if (_currentWeapon.IsEmpty || _currentWeapon.CooldownTimer > 0)
+                return;
+
+            _currentWeapon.Shoot();
+            _playerAnimator.PlayFireAnimation();
+            WeaponUsed?.Invoke();
         }
 
         public void ReloadWeapon()
         {
-            if(_currentWeapon.CurrentAmmo < _currentWeapon.MaxCapacity)
-            {
-                _currentWeapon.Reload();
-                _playerAnimator.PlayReloadAnimation();
-                WeaponUsed?.Invoke();
-            }
+            if (_currentWeapon.CurrentAmmo >= _currentWeapon.MaxCapacity)
+                return;
+
+            _currentWeapon.Reload();
+            _playerAnimator.PlayReloadAnimation();
+            WeaponUsed?.Invoke();
         }
 
         private void SetUpWeapon()

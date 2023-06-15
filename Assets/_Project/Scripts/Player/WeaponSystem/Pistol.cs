@@ -19,14 +19,26 @@ namespace PlayerLogic.WeaponSystem
         public override void Shoot()
         {
             Ray ray = new Ray(_shootingPoint.position, transform.forward);
-
             Debug.DrawLine(ray.origin, ray.origin + ray.direction * 10f, Color.red);
 
+            StartCoroutine(Cooldown());
             StartCoroutine(ActivateEffect());
             currentAmmo--;
 
-            if(currentAmmo == 0)
+            if (currentAmmo == 0)
                 isEmpty = true;
+        }
+
+        private IEnumerator Cooldown()
+        {
+            cooldownTimer = fireCooldown;
+
+            while (cooldownTimer > 0) 
+            {
+                cooldownTimer -= Time.deltaTime;
+                print(cooldownTimer);
+                yield return null;
+            }
         }
 
         private IEnumerator ActivateEffect()
