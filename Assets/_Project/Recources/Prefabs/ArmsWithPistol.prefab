@@ -1202,8 +1202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886625c4be5a96946bda8e16a7fe8dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pistolSritableObject: {fileID: 11400000, guid: 5beee64080ba72a478d617ecebb0b70c, type: 2}
   _shootingPoint: {fileID: 4362336552264459193}
-  _effect: {fileID: 0}
+  _shotEffect: {fileID: 0}
 --- !u!1 &3951198287305988067
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,5 +12,5 @@ public class AmmoDisplay : MonoBehaviour
     private void OnDisable() => _weaponHandler.WeaponUsed -= UpdateView;
 
     private void UpdateView() => 
-        _ammoCountText.text = $"{_weaponHandler.CurrentWeapon.CurrentAmmo} / {_weaponHandler.CurrentWeapon.MaxAmmo}";
+        _ammoCountText.text = $"{_weaponHandler.CurrentWeapon.CurrentAmmo} / {_weaponHandler.CurrentWeapon.MaxCapacity}";
 }

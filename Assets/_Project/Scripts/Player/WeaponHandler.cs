@@ -21,18 +21,22 @@ namespace PlayerLogic.WeaponSystem
 
         public void UseWeapon()
         {
-            if (_currentWeapon.CurrentAmmo > 0)
+            if (_currentWeapon.IsEmpty == false)
             {
                 _currentWeapon.Shoot();
                 _playerAnimator.PlayFireAnimation();
+                WeaponUsed?.Invoke();
             }
-            else if (_currentWeapon.CurrentAmmo < _currentWeapon.MaxAmmo)
+        }
+
+        public void ReloadWeapon()
+        {
+            if(_currentWeapon.CurrentAmmo < _currentWeapon.MaxCapacity)
             {
                 _currentWeapon.Reload();
                 _playerAnimator.PlayReloadAnimation();
+                WeaponUsed?.Invoke();
             }
-
-            WeaponUsed?.Invoke();
         }
     }
 }
