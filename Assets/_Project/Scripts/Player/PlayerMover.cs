@@ -1,7 +1,7 @@
-﻿using Player.InputService;
+﻿using PlayerLogic.InputService;
 using UnityEngine;
 
-namespace Player.Movement
+namespace PlayerLogic.Movement
 {
     [RequireComponent(typeof(CharacterController))]
     public class PlayerMover : MonoBehaviour

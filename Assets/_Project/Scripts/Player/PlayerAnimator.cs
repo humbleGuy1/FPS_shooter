@@ -1,7 +1,7 @@
-using Player.InputService;
+using PlayerLogic.InputService;
 using UnityEngine;
 
-namespace Player.Animation
+namespace PlayerLogic.Animation
 {
     public class PlayerAnimator : MonoBehaviour
     {

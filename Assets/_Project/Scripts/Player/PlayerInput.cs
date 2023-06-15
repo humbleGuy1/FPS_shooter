@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player.InputService
+namespace PlayerLogic.InputService
 {
     public class PlayerInput : MonoBehaviour
     {

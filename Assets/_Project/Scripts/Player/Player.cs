@@ -1,8 +1,8 @@
-using Player.InputService;
-using Player.WeaponSystem;
+using PlayerLogic.InputService;
+using PlayerLogic.WeaponSystem;
 using UnityEngine;
 
-namespace Player
+namespace PlayerLogic
 {
     [SelectionBase]
     public class Player : MonoBehaviour

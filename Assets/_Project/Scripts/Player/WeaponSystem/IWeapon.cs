@@ -1,4 +1,4 @@
-﻿namespace Player.WeaponSystem
+﻿namespace PlayerLogic.WeaponSystem
 {
     public interface IWeapon
     {

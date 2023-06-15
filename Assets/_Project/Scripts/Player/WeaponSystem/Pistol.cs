@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Player.WeaponSystem
+namespace PlayerLogic.WeaponSystem
 {
     public class Pistol : MonoBehaviour, IWeapon
     {
@@ -28,6 +28,7 @@ namespace Player.WeaponSystem
 
             StartCoroutine(ActivateEffect());
             _currentAmmo--;
+
         }
 
         public void Reload()

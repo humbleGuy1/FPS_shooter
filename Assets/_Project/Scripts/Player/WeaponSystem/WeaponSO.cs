@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player.WeaponSystem
+namespace PlayerLogic.WeaponSystem
 {
     [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon", order = 1)]
     public class WeaponSO : ScriptableObject
