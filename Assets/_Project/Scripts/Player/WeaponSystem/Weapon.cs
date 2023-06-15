@@ -18,8 +18,8 @@ namespace PlayerLogic.WeaponSystem
         public float ReloadingTime => reloadingTime;
         public bool IsEmpty => isEmpty;
 
-        public abstract void Shoot();
         public abstract void Initialize();
+        public abstract void Shoot();
 
         public void Reload()
         {

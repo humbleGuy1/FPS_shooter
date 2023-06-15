@@ -844,6 +844,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &777204238 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1415410106554878179, guid: 16fa69ff15a0d1b4b971d45286955d6f, type: 3}
+  m_PrefabInstance: {fileID: 868966274}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886625c4be5a96946bda8e16a7fe8dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &829130156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,6 +1255,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -7.751292
       objectReference: {fileID: 0}
+    - target: {fileID: 6225166202464441959, guid: 16fa69ff15a0d1b4b971d45286955d6f, type: 3}
+      propertyPath: _weapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225166202464441959, guid: 16fa69ff15a0d1b4b971d45286955d6f, type: 3}
+      propertyPath: _weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 777204238}
     - target: {fileID: 6731657364695933435, guid: 16fa69ff15a0d1b4b971d45286955d6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -2.0461242

@@ -1,11 +1,13 @@
 ﻿using PlayerLogic.Animation;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PlayerLogic.WeaponSystem
 {
     public class WeaponHandler : MonoBehaviour
     {
+        [SerializeField] private List<Weapon> _weapons;
         [SerializeField] private PlayerAnimator _playerAnimator;
         [SerializeField] private IWeapon _currentWeapon;
 
