@@ -48,8 +48,10 @@ namespace PlayerLogic.WeaponSystem
             WeaponUsed?.Invoke();
         }
 
-        private bool CanShoot() => 
-            _currentWeapon.IsEmpty == false && _currentWeapon.CooldownTimer <= 0;
+        private bool CanShoot() =>
+            _currentWeapon.IsEmpty == false &&
+            _currentWeapon.CooldownFinished &&
+            _currentWeapon.NotReloading;
 
         private bool CanReload() => 
             _currentWeapon.CurrentAmmo < _currentWeapon.MaxCapacity;

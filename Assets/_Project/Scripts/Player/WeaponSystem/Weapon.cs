@@ -5,47 +5,56 @@ namespace PlayerLogic.WeaponSystem
 {
     public abstract class Weapon : MonoBehaviour, IWeapon
     {
-        [SerializeField] private WeaponSO weaponSriptableObject;
+        [SerializeField] private WeaponSO _weaponScriptableObject;
 
-        private int _maxCapacity;
         private int _currentAmmo;
-        private float _fireCooldown;
-        private float _reloadingTime;
         private float _cooldownTimer;
+        private float _reloadingTimer;
 
-        public int MaxCapacity => _maxCapacity;
+        public int MaxCapacity => _weaponScriptableObject.MaxCapacity;
+        public float FireCooldown => _weaponScriptableObject.FireCooldown;
+        public float ReloadingTime => _weaponScriptableObject.ReloadingTime;
         public int CurrentAmmo => _currentAmmo;
-        public float FireCooldown => _fireCooldown;
-        public float ReloadingTime => _reloadingTime;
-        public float CooldownTimer => _cooldownTimer;
         public bool IsEmpty => _currentAmmo == 0;
+        public bool NotReloading => _reloadingTimer <= 0;
+        public bool CooldownFinished => _cooldownTimer <= 0;
 
         public void Initialize()
         {
-            _maxCapacity = weaponSriptableObject.MaxCapacity;
-            _fireCooldown = weaponSriptableObject.FireCooldown;
-            _reloadingTime = weaponSriptableObject.ReloadingTime;
-            _currentAmmo = _maxCapacity;
+            _currentAmmo = MaxCapacity;
         }
 
         public virtual void Fire()
         {
             _currentAmmo--;
-            StartCoroutine(CountCooldown());
+            StartCoroutine(CountFireCooldown());
         }
 
         public void Reload()
         {
-            _currentAmmo = _maxCapacity;
+            _currentAmmo = MaxCapacity;
+            StartCoroutine(StartReloading());
         }
 
-        private IEnumerator CountCooldown()
+        private IEnumerator CountFireCooldown()
         {
-            _cooldownTimer = _fireCooldown;
+            _cooldownTimer = FireCooldown;
 
             while (_cooldownTimer > 0)
             {
                 _cooldownTimer -= Time.deltaTime;
+
+                yield return null;
+            }
+        }
+
+        private IEnumerator StartReloading()
+        {
+            _reloadingTimer = ReloadingTime;
+
+            while (_reloadingTimer > 0)
+            {
+                _reloadingTimer -= Time.deltaTime;
 
                 yield return null;
             }

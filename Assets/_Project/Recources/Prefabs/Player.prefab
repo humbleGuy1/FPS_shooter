@@ -373,6 +373,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmsWithPistol
       objectReference: {fileID: 0}
+    - target: {fileID: 4118966248526374588, guid: 4dc987106f34dae40aab7469f15c55d2, type: 3}
+      propertyPath: _weaponSriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 5beee64080ba72a478d617ecebb0b70c, type: 2}
+    - target: {fileID: 4118966248526374588, guid: 4dc987106f34dae40aab7469f15c55d2, type: 3}
+      propertyPath: _weaponScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 5beee64080ba72a478d617ecebb0b70c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dc987106f34dae40aab7469f15c55d2, type: 3}
 --- !u!4 &675054592551359036 stripped

@@ -6,8 +6,9 @@
         public int CurrentAmmo { get; }
         public float FireCooldown { get; }
         public float ReloadingTime { get; }
-        public float CooldownTimer { get; }
         public bool IsEmpty { get; }
+        public bool NotReloading { get; }
+        public bool CooldownFinished { get; }
 
         public void Initialize();
         public void Fire();
