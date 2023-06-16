@@ -8,14 +8,6 @@ namespace PlayerLogic.WeaponSystem
         [SerializeField] private Transform _shootingPoint;
         [SerializeField] private GameObject _shotEffect;
 
-        public override void Initialize()
-        {
-            maxCapacity = weaponSriptableObject.MaxCapacity;
-            fireCooldown = weaponSriptableObject.FireCooldown;
-            reloadingTime = weaponSriptableObject.ReloadingTime;
-            currentAmmo = maxCapacity;
-        }
-
         public override void Shoot()
         {
             Ray ray = new Ray(_shootingPoint.position, transform.forward);
@@ -24,9 +16,6 @@ namespace PlayerLogic.WeaponSystem
             StartCoroutine(Cooldown());
             StartCoroutine(ActivateEffect());
             currentAmmo--;
-
-            if (currentAmmo == 0)
-                isEmpty = true;
         }
 
         private IEnumerator Cooldown()

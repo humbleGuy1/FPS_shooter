@@ -11,22 +11,27 @@ namespace PlayerLogic.WeaponSystem
         protected float fireCooldown;
         protected float reloadingTime;
         protected float cooldownTimer;
-        protected bool isEmpty;
 
         public int MaxCapacity => maxCapacity;
         public int CurrentAmmo => currentAmmo;
         public float FireCooldown => fireCooldown;
         public float ReloadingTime => reloadingTime;
         public float CooldownTimer => cooldownTimer;
-        public bool IsEmpty => isEmpty;
+        public bool IsEmpty => currentAmmo == 0;
 
-        public abstract void Initialize();
+        public void Initialize()
+        {
+            maxCapacity = weaponSriptableObject.MaxCapacity;
+            fireCooldown = weaponSriptableObject.FireCooldown;
+            reloadingTime = weaponSriptableObject.ReloadingTime;
+            currentAmmo = maxCapacity;
+        }
+
         public abstract void Shoot();
 
         public void Reload()
         {
             currentAmmo = maxCapacity;
-            isEmpty = false;
         }
     }
 }
