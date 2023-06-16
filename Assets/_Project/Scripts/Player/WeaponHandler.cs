@@ -9,7 +9,8 @@ namespace PlayerLogic.WeaponSystem
     {
         [SerializeField] private List<Weapon> _weapons;
         [SerializeField] private PlayerAnimator _playerAnimator;
-        [SerializeField] private IWeapon _currentWeapon;
+
+        private IWeapon _currentWeapon;
 
         public event Action WeaponUsed;
 

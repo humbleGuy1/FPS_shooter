@@ -33,10 +33,10 @@ namespace PlayerLogic.WeaponSystem
         {
             cooldownTimer = fireCooldown;
 
-            while (cooldownTimer > 0) 
+            while (cooldownTimer > 0)
             {
                 cooldownTimer -= Time.deltaTime;
-                print(cooldownTimer);
+
                 yield return null;
             }
         }
