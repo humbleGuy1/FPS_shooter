@@ -1,37 +1,54 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace PlayerLogic.WeaponSystem
 {
     public abstract class Weapon : MonoBehaviour, IWeapon
     {
-        [SerializeField] protected WeaponSO weaponSriptableObject;
+        [SerializeField] private WeaponSO weaponSriptableObject;
 
-        protected int maxCapacity;
-        protected int currentAmmo;
-        protected float fireCooldown;
-        protected float reloadingTime;
-        protected float cooldownTimer;
+        private int _maxCapacity;
+        private int _currentAmmo;
+        private float _fireCooldown;
+        private float _reloadingTime;
+        private float _cooldownTimer;
 
-        public int MaxCapacity => maxCapacity;
-        public int CurrentAmmo => currentAmmo;
-        public float FireCooldown => fireCooldown;
-        public float ReloadingTime => reloadingTime;
-        public float CooldownTimer => cooldownTimer;
-        public bool IsEmpty => currentAmmo == 0;
+        public int MaxCapacity => _maxCapacity;
+        public int CurrentAmmo => _currentAmmo;
+        public float FireCooldown => _fireCooldown;
+        public float ReloadingTime => _reloadingTime;
+        public float CooldownTimer => _cooldownTimer;
+        public bool IsEmpty => _currentAmmo == 0;
 
         public void Initialize()
         {
-            maxCapacity = weaponSriptableObject.MaxCapacity;
-            fireCooldown = weaponSriptableObject.FireCooldown;
-            reloadingTime = weaponSriptableObject.ReloadingTime;
-            currentAmmo = maxCapacity;
+            _maxCapacity = weaponSriptableObject.MaxCapacity;
+            _fireCooldown = weaponSriptableObject.FireCooldown;
+            _reloadingTime = weaponSriptableObject.ReloadingTime;
+            _currentAmmo = _maxCapacity;
         }
 
-        public abstract void Shoot();
+        public virtual void Fire()
+        {
+            _currentAmmo--;
+            StartCoroutine(CountCooldown());
+        }
 
         public void Reload()
         {
-            currentAmmo = maxCapacity;
+            _currentAmmo = _maxCapacity;
+        }
+
+        private IEnumerator CountCooldown()
+        {
+            _cooldownTimer = _fireCooldown;
+
+            while (_cooldownTimer > 0)
+            {
+                _cooldownTimer -= Time.deltaTime;
+
+                yield return null;
+            }
         }
     }
 }

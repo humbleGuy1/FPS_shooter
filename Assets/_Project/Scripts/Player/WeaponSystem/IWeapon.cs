@@ -10,7 +10,7 @@
         public bool IsEmpty { get; }
 
         public void Initialize();
-        public void Shoot();
+        public void Fire();
         public void Reload();
     }
 }

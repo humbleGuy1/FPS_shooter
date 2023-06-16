@@ -21,24 +21,24 @@ namespace PlayerLogic.WeaponSystem
             SetUpWeapon();
         }
 
-        public void UseWeapon()
+        public void Shoot()
         {
-            if (_currentWeapon.IsEmpty || _currentWeapon.CooldownTimer > 0)
-                return;
-
-            _currentWeapon.Shoot();
-            _playerAnimator.PlayFireAnimation();
-            WeaponUsed?.Invoke();
+            if (CanShoot())
+            {
+                _currentWeapon.Fire();
+                _playerAnimator.PlayFireAnimation();
+                WeaponUsed?.Invoke();
+            }
         }
 
         public void ReloadWeapon()
         {
-            if (_currentWeapon.CurrentAmmo >= _currentWeapon.MaxCapacity)
-                return;
-
-            _currentWeapon.Reload();
-            _playerAnimator.PlayReloadAnimation();
-            WeaponUsed?.Invoke();
+            if (CanReload())
+            {
+                _currentWeapon.Reload();
+                _playerAnimator.PlayReloadAnimation();
+                WeaponUsed?.Invoke();
+            }
         }
 
         private void SetUpWeapon()
@@ -47,6 +47,12 @@ namespace PlayerLogic.WeaponSystem
             _currentWeapon.Initialize();
             WeaponUsed?.Invoke();
         }
+
+        private bool CanShoot() => 
+            _currentWeapon.IsEmpty == false && _currentWeapon.CooldownTimer <= 0;
+
+        private bool CanReload() => 
+            _currentWeapon.CurrentAmmo < _currentWeapon.MaxCapacity;
     }
 }
 
