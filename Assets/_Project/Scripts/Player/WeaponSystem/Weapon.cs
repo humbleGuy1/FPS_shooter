@@ -13,7 +13,7 @@ namespace PlayerLogic.WeaponSystem
 
         public int MaxCapacity => _weaponScriptableObject.MaxCapacity;
         public float FireCooldown => _weaponScriptableObject.FireCooldown;
-        public float ReloadingTime => _weaponScriptableObject.ReloadingTime;
+        public float ReloadTime => _weaponScriptableObject.ReloadTime;
         public int CurrentAmmo => _currentAmmo;
         public bool IsEmpty => _currentAmmo == 0;
         public bool NotReloading => _reloadingTimer <= 0;
@@ -50,7 +50,7 @@ namespace PlayerLogic.WeaponSystem
 
         private IEnumerator StartReloading()
         {
-            _reloadingTimer = ReloadingTime;
+            _reloadingTimer = ReloadTime;
 
             while (_reloadingTimer > 0)
             {

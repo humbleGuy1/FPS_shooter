@@ -12,7 +12,7 @@ namespace PlayerLogic.Movement
         [SerializeField] private float _lookSpeed = 2.0f;
         [SerializeField] private float _lookXLimit = 60.0f;
         [SerializeField] private PlayerInput _playerInput;
-        [SerializeField ]private CharacterController _characterController;
+        [SerializeField] private CharacterController _characterController;
 
         private Vector3 _moveDirection = Vector3.zero;
         private float _rotationX = 0;

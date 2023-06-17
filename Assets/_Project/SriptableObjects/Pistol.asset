@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   <MaxCapacity>k__BackingField: 5
-  <FireCooldown>k__BackingField: 0.5
+  <FireCooldown>k__BackingField: 2
   <ReloadingTime>k__BackingField: 2

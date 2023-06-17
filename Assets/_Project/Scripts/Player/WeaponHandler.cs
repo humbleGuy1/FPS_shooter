@@ -36,7 +36,7 @@ namespace PlayerLogic.WeaponSystem
             if (CanReload())
             {
                 _currentWeapon.Reload();
-                _playerAnimator.PlayReloadAnimation();
+                _playerAnimator.PlayReloadAnimation(_currentWeapon.ReloadTime);
                 WeaponUsed?.Invoke();
             }
         }

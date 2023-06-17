@@ -7,6 +7,6 @@ namespace PlayerLogic.WeaponSystem
     {
         [field: SerializeField, Min(0)] public int MaxCapacity { get; private set; }
         [field: SerializeField, Min(0)] public float FireCooldown { get; private set; }
-        [field: SerializeField, Min(0)] public float ReloadingTime { get; private set; }
+        [field: SerializeField, Min(0)] public float ReloadTime { get; private set; }
     }
 }
