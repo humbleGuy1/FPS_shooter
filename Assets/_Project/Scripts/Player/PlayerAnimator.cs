@@ -30,7 +30,7 @@ namespace PlayerLogic.Animation
         public void PlayReloadAnimation(float reloadTime) =>
             PlayAnimationForTime(ReloadHash, ReloadTimeHash, reloadTime);
 
-        private void PlayAnimation(int hash) => _animator.Play(hash);
+        private void PlayAnimation(int animationHash) => _animator.Play(animationHash);
 
         private void PlayAnimationForTime(int animationHash, int motionParameterHash, float duration)
         {
