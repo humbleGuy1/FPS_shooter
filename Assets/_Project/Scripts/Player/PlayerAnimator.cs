@@ -27,14 +27,14 @@ namespace PlayerLogic.Animation
 
         public void PlayFireAnimation() => PlayAnimation(FireHash);
 
-        public void PlayReloadAnimation(float reloadTime) => 
-            PlayAnimationForCertainTime(ReloadHash, ReloadTimeHash, reloadTime);
+        public void PlayReloadAnimation(float reloadTime) =>
+            PlayAnimationForTime(ReloadHash, ReloadTimeHash, reloadTime);
 
         private void PlayAnimation(int hash) => _animator.Play(hash);
 
-        private void PlayAnimationForCertainTime(int animationHash, int motionParametHash, float duration)
+        private void PlayAnimationForTime(int animationHash, int motionParameterHash, float duration)
         {
-            _animator.SetFloat(motionParametHash, 0);
+            _animator.SetFloat(motionParameterHash, 0);
             _animator.Play(animationHash);
             StartCoroutine(LerpAnimation(duration));
         }
