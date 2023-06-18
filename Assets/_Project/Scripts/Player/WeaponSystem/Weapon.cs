@@ -5,19 +5,21 @@ namespace PlayerLogic.WeaponSystem
 {
     public abstract class Weapon : MonoBehaviour, IWeapon
     {
-        [SerializeField] private WeaponSO _weaponScriptableObject;
+        [SerializeField] private WeaponData _weaponData;
 
         private int _currentAmmo;
         private float _cooldownTimer;
         private float _reloadingTimer;
 
-        public int MaxCapacity => _weaponScriptableObject.MaxCapacity;
-        public float FireCooldown => _weaponScriptableObject.FireCooldown;
-        public float ReloadTime => _weaponScriptableObject.ReloadTime;
+        private Coroutine _fireCoroutine;
+
+        public int MaxCapacity => _weaponData.MaxCapacity;
+        public float FireCooldown => _weaponData.FireCooldown;
+        public float ReloadTime => _weaponData.ReloadTime;
         public int CurrentAmmo => _currentAmmo;
         public bool IsEmpty => _currentAmmo == 0;
-        public bool NotReloading => _reloadingTimer <= 0;
         public bool CooldownFinished => _cooldownTimer <= 0;
+        public bool NotReloading => _reloadingTimer <= 0;
 
         public void Initialize()
         {
@@ -26,8 +28,11 @@ namespace PlayerLogic.WeaponSystem
 
         public virtual void Fire()
         {
+            if(_fireCoroutine is not null)
+                StopCoroutine(_fireCoroutine);
+
             _currentAmmo--;
-            StartCoroutine(CountFireCooldown());
+            _fireCoroutine = StartCoroutine(CountFireCooldown());
         }
 
         public void Reload()

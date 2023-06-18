@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deac077b24a3c2148bcdba293e08e4b4, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  <MaxCapacity>k__BackingField: 5
-  <FireCooldown>k__BackingField: 0.5
+  <MaxCapacity>k__BackingField: 10
+  <FireCooldown>k__BackingField: 0.6
   <ReloadTime>k__BackingField: 2

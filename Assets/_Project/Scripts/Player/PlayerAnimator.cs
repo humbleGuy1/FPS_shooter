@@ -36,17 +36,17 @@ namespace PlayerLogic.Animation
         {
             _animator.SetFloat(motionParameterHash, 0);
             _animator.Play(animationHash);
-            StartCoroutine(LerpAnimation(duration));
+            StartCoroutine(LerpAnimation(duration, motionParameterHash));
         }
 
-        private IEnumerator LerpAnimation(float duration)
+        private IEnumerator LerpAnimation(float duration, int motionParameterHash)
         {
             float elapsedTime = 0;
 
             while (elapsedTime < duration)
             {
                 elapsedTime += Time.deltaTime;
-                _animator.SetFloat(ReloadTimeHash, Mathf.Lerp(0, 1, elapsedTime / duration));
+                _animator.SetFloat(motionParameterHash, Mathf.Lerp(0, 1, elapsedTime / duration));
 
                 yield return null;
             }

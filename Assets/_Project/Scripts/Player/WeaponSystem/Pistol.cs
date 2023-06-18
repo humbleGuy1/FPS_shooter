@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using HittableObjects;
 
 namespace PlayerLogic.WeaponSystem
 {
@@ -17,8 +18,10 @@ namespace PlayerLogic.WeaponSystem
 
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                print("hit");
-                //hit.transform.position
+                if (hit.collider.gameObject.TryGetComponent(out IHittableObject hittable))
+                {
+                    hittable.OnHit();
+                }
             }
 
             //Debug.DrawLine(ray.origin, ray.origin + ray.direction * 10f, Color.red);
