@@ -4,17 +4,16 @@ namespace HittableObjects
 {
     public class HittableObject : MonoBehaviour, IHittableObject
     {
-        [SerializeField] private ObjectType _type;
+        [SerializeField] private ParticleSystem _hitEffectPrefab;
 
-        public ObjectType Type => _type;
-
-        public void OnHit()
+        public void SpawnImpactParticles(RaycastHit hit)
         {
-            print(gameObject.name);
+            ParticleSystem effect = Instantiate(_hitEffectPrefab, hit.point, Quaternion.identity);
+            effect.transform.rotation = Quaternion.FromToRotation(effect.transform.forward, hit.normal)
+                * effect.transform.rotation; ;
         }
     }
 }
-
 
 
 

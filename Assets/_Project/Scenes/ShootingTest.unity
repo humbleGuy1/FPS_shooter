@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ddc2458b26566439ec6fee53d7b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 1
+  _hitEffectPrefab: {fileID: 8063672401086754221, guid: 356595c90819c5545b2299bb7f4e47de, type: 3}
 --- !u!1 &512431316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,7 +1292,7 @@ GameObject:
   - component: {fileID: 1316236423}
   - component: {fileID: 1316236426}
   m_Layer: 0
-  m_Name: Glass
+  m_Name: WoodCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1306,7 +1306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316236421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.81, y: 2.2, z: 15.3}
+  m_LocalPosition: {x: -10.77, y: 2.2, z: 15.3}
   m_LocalScale: {x: 6.391484, y: 7.307564, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ddc2458b26566439ec6fee53d7b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 0
+  _hitEffectPrefab: {fileID: 5747068240147302021, guid: 0c03f3e88513ed4498d674a7d338649f, type: 3}
 --- !u!1 &1676463734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,23 +1743,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2048671598154195339, guid: a2d0d909e04b0674293c46d7e9ab939c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a2d0d909e04b0674293c46d7e9ab939c, type: 3}
---- !u!1 &2720485956569577359 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4395244820663561201, guid: a2d0d909e04b0674293c46d7e9ab939c, type: 3}
-  m_PrefabInstance: {fileID: 2720485956569577358}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2720485956569577361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2720485956569577359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc9cea3e7ce3f36449d6905f67b1d86a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: 0
