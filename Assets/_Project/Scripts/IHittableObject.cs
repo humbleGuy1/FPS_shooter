@@ -9,8 +9,8 @@ namespace HittableObjects
 
     public enum ObjectType
     {
-        Glass,
-        Brick
+        Wood,
+        Metal
     }
 }
 
