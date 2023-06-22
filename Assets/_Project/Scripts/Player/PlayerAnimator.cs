@@ -20,10 +20,8 @@ namespace PlayerLogic.Animation
         private readonly int ReloadHash = Animator.StringToHash(Reload);
         private readonly int ReloadTimeHash = Animator.StringToHash(ReloadTime);
 
-        private void Update()
-        {
+        private void Update() => 
             _animator.SetFloat(SpeedHash, _characterController.velocity.magnitude);
-        }
 
         public void PlayFireAnimation() => PlayAnimation(FireHash);
 

@@ -10,20 +10,24 @@ namespace PlayerLogic.WeaponSystem
         private int _currentAmmo;
         private float _cooldownTimer;
         private float _reloadingTimer;
+        private HitChecker _hitChecker;
 
         private Coroutine _fireCoroutine;
 
         public int MaxCapacity => _weaponData.MaxCapacity;
+        public int Damage => _weaponData.Damage;
         public float FireCooldown => _weaponData.FireCooldown;
         public float ReloadTime => _weaponData.ReloadTime;
         public int CurrentAmmo => _currentAmmo;
         public bool IsEmpty => _currentAmmo == 0;
         public bool CooldownFinished => _cooldownTimer <= 0;
         public bool NotReloading => _reloadingTimer <= 0;
+        public HitChecker HitChecker => _hitChecker;
 
         public void Initialize()
         {
             _currentAmmo = MaxCapacity;
+            _hitChecker = new HitChecker();
         }
 
         public virtual void Fire()

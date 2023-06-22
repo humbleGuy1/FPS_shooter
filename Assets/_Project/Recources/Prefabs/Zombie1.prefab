@@ -1602,7 +1602,10 @@ GameObject:
   - component: {fileID: 7218797386318263448}
   - component: {fileID: 2720485956569577360}
   - component: {fileID: 2720485956569577361}
-  - component: {fileID: 2048671598154195339}
+  - component: {fileID: 255365478334336990}
+  - component: {fileID: 5661674247836165379}
+  - component: {fileID: 2690647380582478814}
+  - component: {fileID: 505134619}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: Untagged
@@ -1685,8 +1688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9cea3e7ce3f36449d6905f67b1d86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 0
---- !u!114 &2048671598154195339
+  _value: 100
+--- !u!114 &255365478334336990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1695,10 +1698,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 4395244820663561201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1ddc2458b26566439ec6fee53d7b931, type: 3}
+  m_Script: {fileID: 11500000, guid: 952a285a13a763e4da92d8a644c3e7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitEffectPrefab: {fileID: 5339920054668132933, guid: 46c1ff242f267974db6b82430a775445, type: 3}
+  _animator: {fileID: 7218797386318263448}
+--- !u!114 &5661674247836165379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395244820663561201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35104e1a17caad74ea1bca2d9f731b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentState: {fileID: 0}
+--- !u!114 &2690647380582478814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395244820663561201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710efb662ada29d44a0d2b0e4e40f7fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyAnimator: {fileID: 255365478334336990}
+--- !u!136 &505134619
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395244820663561201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!1 &4505424918135534432
 GameObject:
   m_ObjectHideFlags: 0

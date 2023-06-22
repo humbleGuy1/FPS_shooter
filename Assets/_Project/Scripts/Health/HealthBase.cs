@@ -11,6 +11,7 @@ namespace Health
         public void TakeDamage(int damage)
         {
             _value -= damage;
+            print(_value);
         }
     }
 }

@@ -3,6 +3,7 @@
     public interface IWeapon
     {
         public int MaxCapacity { get; }
+        public int Damage { get; }
         public int CurrentAmmo { get; }
         public float FireCooldown { get; }
         public float ReloadTime { get; }

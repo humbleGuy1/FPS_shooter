@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using HittableObjects;
 
 namespace PlayerLogic.WeaponSystem
 {
@@ -9,20 +8,16 @@ namespace PlayerLogic.WeaponSystem
         [SerializeField] private Transform _shootingPoint;
         [SerializeField] private GameObject _shotEffect;
 
+        private Ray _ray;
+
         public override void Fire()
         {
             base.Fire();
 
-            Ray ray = new Ray(_shootingPoint.position, transform.forward);
-            //Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            _ray = new(_shootingPoint.position, transform.forward);
 
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                if (hit.collider.gameObject.TryGetComponent(out IHittableObject hittable))
-                {
-                    hittable.SpawnImpactParticles(hit);
-                }
-            }
+            HitChecker.HitEnemy(_ray, Damage);
+            HitChecker.HitHittableObject(_ray);
 
             StartCoroutine(ActivateEffect());
         }
