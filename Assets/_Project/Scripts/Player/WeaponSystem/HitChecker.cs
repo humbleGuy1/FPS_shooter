@@ -6,6 +6,10 @@ namespace PlayerLogic.WeaponSystem
 {
     public class HitChecker
     {
+        private readonly int _layerMask = ~(1 << LayerMask.NameToLayer(Enemy));
+
+        private const string Enemy = "Enemy";
+
         public void HitEnemy(Ray ray, int damage)
         {
             if (Physics.Raycast(ray, out RaycastHit hit))
@@ -19,7 +23,7 @@ namespace PlayerLogic.WeaponSystem
 
         public void HitHittableObject(Ray ray)
         {
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, _layerMask))
             {
                 if (hit.collider.gameObject.TryGetComponent(out IHittableObject hittable))
                 {
