@@ -1,3 +1,5 @@
+using System;
+
 namespace Health
 {
     public interface IHealth
@@ -5,6 +7,8 @@ namespace Health
         public int Value { get; }
 
         public void TakeDamage(int damage);
+
+        public event Action DamageTaken;
     }
 }
 

@@ -104,7 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 874527164685196495}
   - component: {fileID: 3826350446010619098}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_L_LegThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2181878935237961264}
   - component: {fileID: 6070430576255452934}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_L_Upperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7662928371147262085}
   - component: {fileID: 4782564947475248848}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_R_LegThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -919,7 +919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3841708558845703817}
   - component: {fileID: 586430085631463067}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_L_Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1267,7 +1267,7 @@ GameObject:
   - component: {fileID: 6220058463478145166}
   - component: {fileID: 812121652}
   - component: {fileID: 812121655}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1389,7 +1389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6127039407437021048}
   - component: {fileID: 8840508926848637949}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_R_Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1508,7 +1508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474437949663967057}
   - component: {fileID: 6784175886842803317}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_R_LegCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1635,7 +1635,7 @@ GameObject:
   - component: {fileID: 5661674247836165379}
   - component: {fileID: 2690647380582478814}
   - component: {fileID: 505134619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Zombie1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1813,7 +1813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6793035095785931172}
   - component: {fileID: 4553949106015046122}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1965,7 +1965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4461353727461315629}
   - component: {fileID: 5802293416087252252}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_R_Upperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2343,7 +2343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5451408630710200978}
   - component: {fileID: 949201648457360484}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_L_LegCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2592,7 +2592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 393171512254305441}
   - component: {fileID: 5041364348555196418}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2712,7 +2712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2044522044688749479}
   - component: {fileID: 2076182848876536390}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_L_ArmPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2876,7 +2876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5836916602098683248}
   - component: {fileID: 4823727646976381863}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_BodyTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2970,7 +2970,7 @@ GameObject:
   m_Component:
   - component: {fileID: 452795695795571892}
   - component: {fileID: 8731093019347007615}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Z_R_ArmPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -2,7 +2,7 @@
 
 namespace HittableObjects
 {
-    public class HittableObject : MonoBehaviour, IHittableObject
+    public class HittableObject : MonoBehaviour, IHittable
     {
         [SerializeField] private ParticleSystem _hitEffectPrefab;
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace HittableObjects
 {
-    public interface IHittableObject
+    public interface IHittable
     {
         public void SpawnImpactParticles(RaycastHit hit);
     }

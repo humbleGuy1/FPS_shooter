@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Health
 {
@@ -8,10 +9,14 @@ namespace Health
 
         public int Value => _value;
 
+        public event Action DamageTaken;
+
         public void TakeDamage(int damage)
         {
             _value -= damage;
             print(_value);
+
+            DamageTaken?.Invoke();
         }
     }
 }

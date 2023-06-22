@@ -6,7 +6,7 @@ namespace PlayerLogic.WeaponSystem
 {
     public class HitChecker
     {
-        private readonly int _layerMask = ~(1 << LayerMask.NameToLayer(Enemy));
+        private readonly int _layerMaskToIgnore = ~(1 << LayerMask.NameToLayer(Enemy));
 
         private const string Enemy = "Enemy";
 
@@ -23,9 +23,9 @@ namespace PlayerLogic.WeaponSystem
 
         public void HitHittableObject(Ray ray)
         {
-            if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, _layerMask))
+            if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, _layerMaskToIgnore))
             {
-                if (hit.collider.gameObject.TryGetComponent(out IHittableObject hittable))
+                if (hit.collider.gameObject.TryGetComponent(out IHittable hittable))
                 {
                     hittable.SpawnImpactParticles(hit);
                 }
